@@ -12,13 +12,17 @@ import models.MealType;
 public class MealsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Meal[] meals = new Meal[] { new Meal(1, "Margheritta", 8.5, MealType.Pizza)};
+        Meal[] meals = new Meal[]
+                {
+                        new Meal(1, "Margherita", 8.5),
+                        new Meal(2,"Garlic sauce", .5)
+                };
         try {
             request.setAttribute("meals", meals);
             request.getRequestDispatcher("/meals/meals.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.getMessage());
-            request.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/error.jsp").forward(request, response);
         }
     }
 

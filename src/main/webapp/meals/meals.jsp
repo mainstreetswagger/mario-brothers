@@ -28,9 +28,9 @@
     <tr>
         <th scope="col"><%=meals[i].getId()%></th>
         <td><%=meals[i].getName()%></td>
-        <td><%=meals[i].getPrice()%></td>
+        <td><%=meals[i].getPrice()%>$</td>
         <td>
-            <div class="input-group">
+            <div class="input-group form-group">
                 <button class="btn btn-outline-secondary" type="button" name="minusButton_<%=meals[i].getId()%>">-</button>
                 <input type="text" value="0" min="0" max="100" class="form-control" name="quantity_<%=meals[i].getId()%>">
                 <button class="btn btn-outline-secondary" type="button" name="plusButton_<%=meals[i].getId()%>">+</button>
