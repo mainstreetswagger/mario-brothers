@@ -15,7 +15,8 @@ public class MealsServlet extends HttpServlet {
         Meal[] meals = new Meal[]
                 {
                         new Meal(1, "Margherita", 8.5),
-                        new Meal(2,"Garlic sauce", .5)
+                        new Meal(2,"Garlic sauce", .5),
+                        new Meal(3,"Coke, 500ml", 1),
                 };
         try {
             request.setAttribute("meals", meals);

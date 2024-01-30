@@ -9,14 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="added meals list">
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/MealOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Meal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="added quantity buttons" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,7 +166,7 @@
       <workItem from="1706281762254" duration="1368000" />
       <workItem from="1706477085294" duration="7722000" />
       <workItem from="1706519277793" duration="11572000" />
-      <workItem from="1706630765721" duration="3129000" />
+      <workItem from="1706630765721" duration="3502000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1706227481986</created>
@@ -189,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706533517329</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added quantity buttons">
+      <created>1706635292227</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706635292227</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +209,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="added meals list" />
-    <option name="LAST_COMMIT_MESSAGE" value="added meals list" />
+    <MESSAGE value="added quantity buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="added quantity buttons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
