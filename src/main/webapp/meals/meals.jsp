@@ -1,4 +1,4 @@
-<%@ page import="models.Meal" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: KWalker
   Date: 1/29/2024
@@ -13,6 +13,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
+<div>
+    <button class="btn-primary" type="button" >Order</button>
+</div>
+<div>
 <table class="table">
     <thead>
     <tr>
@@ -31,14 +35,26 @@
         <td><%=meals[i].getPrice()%>$</td>
         <td>
             <div class="input-group form-group">
-                <button class="btn btn-outline-secondary" type="button" name="minusButton_<%=meals[i].getId()%>">-</button>
-                <input type="text" value="0" min="0" max="100" class="form-control" name="quantity_<%=meals[i].getId()%>">
-                <button class="btn btn-outline-secondary" type="button" name="plusButton_<%=meals[i].getId()%>">+</button>
+                <button class="btn btn-outline-secondary" type="button" onclick="decrement(<%=meals[i].getId()%>)">-</button>
+                <span class="form-control" name="<%=meals[i].getId()%>">0</span>
+                <button class="btn btn-outline-secondary" type="button" onclick="increment(<%=meals[i].getId()%>)">+</button>
             </div>
         </td>
     </tr>
     <%}%>
     </tbody>
 </table>
+</div>
+<script type="text/javascript">
+    function increment(id) {
+        let increment = document.getElementsByName(id);
+        increment[0].textContent++;
+    }
+    function decrement(id) {
+        let decrement = document.getElementsByName(id);
+        if(decrement[0].textContent > 0)
+            decrement[0].textContent--;
+    }
+</script>
 </body>
 </html>
