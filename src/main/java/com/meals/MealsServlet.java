@@ -4,13 +4,32 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.*;
 
+import models.DbConfiguration;
 import models.Meal;
 
 @WebServlet(name = "meals", value = "/meals")
 public class MealsServlet extends HttpServlet {
+    private Statement stmt;
+    private Connection con;
+    private ResultSet rs;
     private Meal[] meals;
     public MealsServlet() {
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DbConfiguration.url,DbConfiguration.user,DbConfiguration.password);
+            stmt = con.createStatement();
+
+                rs = stmt.executeQuery("select * from optional_ingredients;");
+                while(rs.next()){
+                    int id = rs.getInt("id");
+                    String name = rs.getString("name");
+                    double price = rs.getDouble("price");
+                }
+                rs.close();
+
+        }catch(Exception e){ System.out.println(e);}
         meals = new Meal[]
                 {
                         new Meal(1, "Margherita", 8.5),
