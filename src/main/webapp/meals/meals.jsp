@@ -36,7 +36,7 @@
         <td>
             <div class="input-group form-group">
                 <button class="btn btn-outline-secondary" type="button" onclick="decrement(<%=meals[i].getId()%>)">-</button>
-                <span class="form-control" name="<%=meals[i].getId()%>">0</span>
+                <span class="form-control" id=<%=meals[i].getId()%>>0</span>
                 <button class="btn btn-outline-secondary" type="button" onclick="increment(<%=meals[i].getId()%>)">+</button>
             </div>
         </td>
@@ -47,13 +47,77 @@
 </div>
 <script type="text/javascript">
     function increment(id) {
-        let increment = document.getElementsByName(id);
-        increment[0].textContent++;
+        let increment = document.getElementById(id);
+        increment.textContent++;
     }
+
     function decrement(id) {
-        let decrement = document.getElementsByName(id);
-        if(decrement[0].textContent > 0)
-            decrement[0].textContent--;
+        let decrement = document.getElementById(id);
+        if(decrement.textContent > 0)
+            decrement.textContent--;
+        postMeals();
+    }
+
+    function fetchSelectedMeals() {
+        let spanElements = document.getElementsByTagName("span");
+        const myMeals = [];
+        console.log("span elements " + spanElements.length);
+        for(let i = 0; i < spanElements.length; i++) {
+            let count = parseInt(spanElements[i].textContent);
+            if(count > 0) {
+                let id = parseInt(spanElements[i].id);
+                myMeals.push({id: id, count: count});
+            }
+        }
+        return myMeals;
+    }
+
+    async function postMeals() {
+        const myMeals = [...fetchSelectedMeals()];
+        const data = JSON.stringify({
+            meals: myMeals
+        });
+        const url = 'http://localhost:8080/MarioBrothers_war_exploded/meals';
+        let res = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+        if (res.ok) {
+            let ret = await res.json();
+            return JSON.parse(ret.data);
+
+        } else {
+            return `HTTP error: ${res.status}`;
+        }
+    }
+
+    async function doRequest() {
+
+        let url = 'http://localhost:8080/MarioBrothers_war_exploded/meals';
+        let data = {'name': 'John Doe', 'occupation': 'John Doe'};
+
+        let res = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (res.ok) {
+
+            // let text = await res.text();
+            // return text;
+
+            let ret = await res.json();
+            return JSON.parse(ret.data);
+
+        } else {
+            return `HTTP error: ${res.status}`;
+        }
     }
 </script>
 </body>
