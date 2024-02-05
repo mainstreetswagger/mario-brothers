@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="models.Meal" %>
+<%@ page import="java.util.ArrayList" %>
 <html>
 <head>
     <title>Meals</title>
@@ -27,17 +28,17 @@
     </tr>
     </thead>
     <tbody>
-    <% Meal[] meals = (Meal[])request.getAttribute("meals");%>
-    <%for(int i = 0; i < meals.length; i++) {%>
+    <% ArrayList<Meal> meals = (ArrayList<Meal>)request.getAttribute("meals");%>
+    <%for(int i = 0; i < meals.size(); i++) {%>
     <tr>
-        <th scope="col"><%=meals[i].getId()%></th>
-        <td><%=meals[i].getName()%></td>
-        <td><%=meals[i].getPrice()%>$</td>
+        <th scope="col"><%=meals.get(i).getId()%></th>
+        <td><%=meals.get(i).getName()%></td>
+        <td><%=meals.get(i).getPrice()%>$</td>
         <td>
             <div class="input-group form-group">
-                <button class="btn btn-outline-secondary" type="button" onclick="decrement(<%=meals[i].getId()%>)">-</button>
-                <span class="form-control" id=<%=meals[i].getId()%>>0</span>
-                <button class="btn btn-outline-secondary" type="button" onclick="increment(<%=meals[i].getId()%>)">+</button>
+                <button class="btn btn-outline-secondary" type="button" onclick="decrement(<%=meals.get(i).getId()%>)">-</button>
+                <span class="form-control" id=<%=meals.get(i).getId()%>>0</span>
+                <button class="btn btn-outline-secondary" type="button" onclick="increment(<%=meals.get(i).getId()%>)">+</button>
             </div>
         </td>
     </tr>
