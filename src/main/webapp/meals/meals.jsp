@@ -15,7 +15,7 @@
 </head>
 <body>
 <div>
-    <button class="btn-primary" type="button" >Order</button>
+    <button class="btn-primary" type="button" onclick="postMeals()">Order</button>
 </div>
 <div>
 <table class="table">
@@ -87,32 +87,6 @@
             body: JSON.stringify(data),
         });
         if (res.ok) {
-            let ret = await res.json();
-            return JSON.parse(ret.data);
-
-        } else {
-            return `HTTP error: ${res.status}`;
-        }
-    }
-
-    async function doRequest() {
-
-        let url = 'http://localhost:8080/MarioBrothers_war_exploded/meals';
-        let data = {'name': 'John Doe', 'occupation': 'John Doe'};
-
-        let res = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-
-        if (res.ok) {
-
-            // let text = await res.text();
-            // return text;
-
             let ret = await res.json();
             return JSON.parse(ret.data);
 

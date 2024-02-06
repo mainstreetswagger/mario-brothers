@@ -9,10 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="added js post method in meals.jsp">
+    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="added models">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/IMealRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/MealRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dtos/MealOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dtos/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/Extra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/ExtraOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/DbConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DbConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/DbConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/DbConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/MealCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/MealCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/MealOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/MealOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/MealType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +82,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="models" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.85" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.85" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/MarioBrothers_war_exploded/meals" />
@@ -179,7 +196,10 @@
       <workItem from="1706827968475" duration="282000" />
       <workItem from="1706828276776" duration="4219000" />
       <workItem from="1706894445103" duration="6477000" />
-      <workItem from="1707088291116" duration="4185000" />
+      <workItem from="1707088291116" duration="4490000" />
+      <workItem from="1707180981244" duration="2762000" />
+      <workItem from="1707223423751" duration="627000" />
+      <workItem from="1707235708712" duration="2794000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1706227481986</created>
@@ -237,7 +257,21 @@
       <option name="project" value="LOCAL" />
       <updated>1706924943543</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="changed Array to ArrayList in MealsServlet.java">
+      <created>1707095264055</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1707095264055</updated>
+    </task>
+    <task id="LOCAL-00010" summary="changed Array to ArrayList in MealsServlet.java">
+      <created>1707095346318</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707095346318</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +296,9 @@
     <MESSAGE value="tried to connect to db" />
     <MESSAGE value="changed password" />
     <MESSAGE value="added js post method in meals.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="added js post method in meals.jsp" />
+    <MESSAGE value="changed Array to ArrayList in MealsServlet.java" />
+    <MESSAGE value="added models" />
+    <option name="LAST_COMMIT_MESSAGE" value="added models" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -270,9 +306,20 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java</url>
           <line>56</line>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="sb.value[0]" />
+        <watch expression="sb.value[0]" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

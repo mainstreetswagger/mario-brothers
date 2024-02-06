@@ -1,4 +1,4 @@
-package models;
+package dbcontext;
 
 public class DbConfiguration {
     public static String user = "root";

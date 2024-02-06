@@ -1,16 +1,16 @@
 package models;
 
-public class MealOrder {
+public class ExtraOrder {
     private int id;
-    private int mealId;
+    private int extraId;
     private int orderId;
     private int count;
-    public MealOrder() { }
-    public MealOrder(int id, int mealId, int orderId, int count) {
+    public ExtraOrder() { }
+    public ExtraOrder(int id, int extraId, int orderId, int count) {
         if(id > 0)
             this.id = id;
-        if(mealId > 0)
-            this.mealId = mealId;
+        if(extraId > 0)
+            this.extraId = extraId;
         if(orderId > 0)
             this.orderId = orderId;
         if(count > 0)
@@ -23,12 +23,12 @@ public class MealOrder {
         if(id > 0)
             this.id = id;
     }
-    public int getMealId() {
-        return this.mealId;
+    public int getExtraId() {
+        return this.extraId;
     }
-    public void setMealId(int mealId) {
-        if(mealId > 0)
-            this.mealId = mealId;
+    public void setExtraId(int extraId) {
+        if(extraId > 0)
+            this.extraId = extraId;
     }
     public int getOrderId() {
         return this.orderId;

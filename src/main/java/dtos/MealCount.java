@@ -1,4 +1,4 @@
-package models;
+package dtos;
 
 public class MealCount {
     private int mealId;
