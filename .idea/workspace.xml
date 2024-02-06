@@ -10,22 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="added models">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/IMealRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/MealRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dtos/MealOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dtos/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Extra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/ExtraOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/DbConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/DbConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/MealCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/MealCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/MealOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/MealOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/MealType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/DbConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/DbConfiguration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +185,7 @@
       <workItem from="1707088291116" duration="4490000" />
       <workItem from="1707180981244" duration="2762000" />
       <workItem from="1707223423751" duration="627000" />
-      <workItem from="1707235708712" duration="2794000" />
+      <workItem from="1707235708712" duration="3348000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1706227481986</created>
@@ -271,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707095346318</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added models">
+      <created>1707238691957</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707238691957</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
