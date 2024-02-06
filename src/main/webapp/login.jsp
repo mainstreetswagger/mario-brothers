@@ -1,38 +1,30 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Zaur
-  Date: 02-Feb-24
-  Time: 16:43
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
 </head>
 <body>
+<div align="center">
+    <h1>Pizza Order Login</h1>
+    <form action="<%= request.getContextPath()%>/LoginServlet" method="post">
+        <table style="with: 100%">
+            <tr>
+                <td>User Name</td>
+                <td><input type="text" name="username" /></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password" /></td>
+            </tr>
 
-<h1>Login</h1>
+        </table>
+        <input type="submit" value="Submit" />
+        <p>Don't have an account? <a href="register.jsp">Register</a></p>
 
-<form action="LoginServlet" method="post">
-    <label for="loginUsername">Username:</label>
-    <input type="text" id="loginUsername" name="loginUsername" required><br>
-
-    <label for="loginPassword">Password:</label>
-    <input type="password" id="loginPassword" name="loginPassword" required><br>
-
-    <input type="submit" value="Login">
-</form>
-
-<%--<c:if test="${not empty param.error}">--%>
-<%--    <p style="color: red;">Invalid username or password. Please try again.</p>--%>
-<%--</c:if>--%>
-
-<p>Not registered? <a href="register.jsp">Register</a></p>
-
+    </form>
+</div>
 </body>
 </html>
