@@ -6,6 +6,7 @@ import javax.servlet.annotation.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
 
 import models.DbConfiguration;
 import models.Meal;
@@ -15,28 +16,30 @@ public class MealsServlet extends HttpServlet {
     private Statement stmt;
     private Connection con;
     private ResultSet rs;
-    private Meal[] meals;
+    private ArrayList<Meal> meals;
     public MealsServlet() {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DbConfiguration.url,DbConfiguration.user,DbConfiguration.password);
             stmt = con.createStatement();
 
-                rs = stmt.executeQuery("select * from optional_ingredients;");
+                rs = stmt.executeQuery("select * from meals;");
+                meals = new ArrayList<Meal>();
                 while(rs.next()){
                     int id = rs.getInt("id");
                     String name = rs.getString("name");
                     double price = rs.getDouble("price");
+                    meals.add(new Meal(id, name, price));
                 }
                 rs.close();
 
         }catch(Exception e){ System.out.println(e);}
-        meals = new Meal[]
+        /*meals = new Meal[]
                 {
                         new Meal(1, "Margherita", 8.5),
                         new Meal(2,"Garlic sauce", .5),
                         new Meal(3,"Coke, 500ml", 1),
-                };
+                };*/
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
