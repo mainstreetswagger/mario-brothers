@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
-import models.DbConfiguration;
+import dbcontext.DbConfiguration;
 import models.Meal;
 
 @WebServlet(name = "meals", value = "/meals")

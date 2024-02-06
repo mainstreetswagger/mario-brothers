@@ -1,6 +1,7 @@
 package models;
 
 public class User {
+<<<<<<< HEAD
     private String userName;
     private String password;
 
@@ -28,5 +29,19 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+=======
+    private int id;
+    public User(){}
+    public User(int id) {
+        if(id > 0)
+            this.id = id;
+    }
+    public int getId() {
+        return this.id;
+    }
+    public void setId() {
+        if(id > 0)
+            this.id = id;
+>>>>>>> origin/master
     }
 }
