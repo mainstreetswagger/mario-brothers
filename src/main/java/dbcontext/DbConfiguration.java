@@ -1,7 +1,7 @@
 package dbcontext;
 
 public class DbConfiguration {
-    public static String user = "root";
-    public static String password = "";
-    public static String url = "jdbc:mysql://localhost:3306/mariobrothers";
+    public final static String url = "jdbc:mysql://localhost:3306/mariobrothers";
+    public final static String user = "root";
+    public final static String password = "0312697052aA.";
 }

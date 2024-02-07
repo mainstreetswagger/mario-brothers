@@ -1,4 +1,4 @@
-package models;
+package dbcontext.models;
 
 public class Extra {
     private int id;

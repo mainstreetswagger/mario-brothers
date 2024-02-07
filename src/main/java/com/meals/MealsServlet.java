@@ -1,49 +1,33 @@
 package com.meals;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import com.fasterxml.jackson.core.StreamReadFeature;
+import com.fasterxml.jackson.databind.DeserializationConfig;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import dbcontext.MarioBrothersDBContext;
+import dbcontext.models.Meal;
+import models.MealCount;
+import models.MealOrder;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.sql.*;
 import java.util.ArrayList;
-
-import dbcontext.DbConfiguration;
-import models.Meal;
 
 @WebServlet(name = "meals", value = "/meals")
 public class MealsServlet extends HttpServlet {
-    private Statement stmt;
-    private Connection con;
-    private ResultSet rs;
-    private ArrayList<Meal> meals;
+    private MarioBrothersDBContext dbContext;
     public MealsServlet() {
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(DbConfiguration.url,DbConfiguration.user,DbConfiguration.password);
-            stmt = con.createStatement();
-
-                rs = stmt.executeQuery("select * from meals;");
-                meals = new ArrayList<Meal>();
-                while(rs.next()){
-                    int id = rs.getInt("id");
-                    String name = rs.getString("name");
-                    double price = rs.getDouble("price");
-                    meals.add(new Meal(id, name, price));
-                }
-                rs.close();
-
-        }catch(Exception e){ System.out.println(e);}
-        /*meals = new Meal[]
-                {
-                        new Meal(1, "Margherita", 8.5),
-                        new Meal(2,"Garlic sauce", .5),
-                        new Meal(3,"Coke, 500ml", 1),
-                };*/
+        dbContext = new MarioBrothersDBContext();
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
+            ArrayList<Meal> meals = dbContext.getMealRepository().getMeals();
             request.setAttribute("meals", meals);
             request.getRequestDispatcher("/meals/meals.jsp").forward(request, response);
         } catch (Exception e) {
@@ -54,12 +38,14 @@ public class MealsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        StringBuilder sb = new StringBuilder();
-        BufferedReader reader = request.getReader();
-        String line;
-        while ((line = reader.readLine()) != null) {
-            sb.append(line);
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
+            MealCount[] mealOrder = mapper.readValue(request.getReader(), MealCount[].class);
+            String name = "some name";
+        } catch (Exception e) {
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/error.jsp").forward(request, response);
         }
-        String requestBody = sb.toString();
     }
 }

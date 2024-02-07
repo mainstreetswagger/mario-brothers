@@ -1,4 +1,4 @@
-package models;
+package dbcontext.models;
 
 import java.sql.Timestamp;
 

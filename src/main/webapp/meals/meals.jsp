@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="models.Meal" %>
+<%@ page import="dbcontext.models.Meal" %>
 <%@ page import="java.util.ArrayList" %>
 <html>
 <head>
@@ -18,33 +18,33 @@
     <button class="btn-primary" type="button" onclick="postMeals()">Order</button>
 </div>
 <div>
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Price</th>
-        <th scope="col">Quantity</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% ArrayList<Meal> meals = (ArrayList<Meal>)request.getAttribute("meals");%>
-    <%for(int i = 0; i < meals.size(); i++) {%>
-    <tr>
-        <th scope="col"><%=meals.get(i).getId()%></th>
-        <td><%=meals.get(i).getName()%></td>
-        <td><%=meals.get(i).getPrice()%>$</td>
-        <td>
-            <div class="input-group form-group">
-                <button class="btn btn-outline-secondary" type="button" onclick="decrement(<%=meals.get(i).getId()%>)">-</button>
-                <span class="form-control" id=<%=meals.get(i).getId()%>>0</span>
-                <button class="btn btn-outline-secondary" type="button" onclick="increment(<%=meals.get(i).getId()%>)">+</button>
-            </div>
-        </td>
-    </tr>
-    <%}%>
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%ArrayList<Meal> meals = (ArrayList<Meal>)request.getAttribute("meals");%>
+            <%for(int i = 0; i < meals.size(); i++) {%>
+            <tr>
+                <th scope="col"><%=meals.get(i).getId()%></th>
+                <td><%=meals.get(i).getName()%></td>
+                <td><%=meals.get(i).getPrice()%>$</td>
+                <td>
+                    <div class="input-group form-group">
+                        <button class="btn btn-outline-secondary" type="button" onclick="decrement(<%=meals.get(i).getId()%>)">-</button>
+                        <span class="form-control" id=<%=meals.get(i).getId()%>>0</span>
+                        <button class="btn btn-outline-secondary" type="button" onclick="increment(<%=meals.get(i).getId()%>)">+</button>
+                    </div>
+                </td>
+            </tr>
+        <%}%>
+        </tbody>
+    </table>
 </div>
 <script type="text/javascript">
     function increment(id) {
@@ -56,7 +56,6 @@
         let decrement = document.getElementById(id);
         if(decrement.textContent > 0)
             decrement.textContent--;
-        postMeals();
     }
 
     function fetchSelectedMeals() {
@@ -67,7 +66,7 @@
             let count = parseInt(spanElements[i].textContent);
             if(count > 0) {
                 let id = parseInt(spanElements[i].id);
-                myMeals.push({id: id, count: count});
+                myMeals.push({mealId: id, count: count});
             }
         }
         return myMeals;
@@ -75,16 +74,14 @@
 
     async function postMeals() {
         const myMeals = [...fetchSelectedMeals()];
-        const data = JSON.stringify({
-            meals: myMeals
-        });
+        const data = JSON.stringify(myMeals);
         const url = 'http://localhost:8080/MarioBrothers_war_exploded/meals';
         let res = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data),
+            body: data,
         });
         if (res.ok) {
             let ret = await res.json();
