@@ -9,28 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="removed pass">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/MarioBrothersDBContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/MealOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/DbConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/DbConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/IMealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/IMealRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/MealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/MealRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/MealCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/MealCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/MealOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Extra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/Extra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/ExtraOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/ExtraOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/Meal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/MealOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/MealOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="removed pass" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,7 +192,7 @@
       <workItem from="1707223423751" duration="627000" />
       <workItem from="1707235708712" duration="4157000" />
       <workItem from="1707296566870" duration="5109000" />
-      <workItem from="1707301920262" duration="26235000" />
+      <workItem from="1707301920262" duration="27174000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1706227481986</created>
@@ -299,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707239242954</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="removed pass">
+      <created>1707341750415</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1707341750416</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +320,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java</url>
-          <line>46</line>
+          <line>43</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
