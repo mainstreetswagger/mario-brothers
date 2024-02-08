@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dbcontext.MarioBrothersDBContext;
 import dbcontext.models.Meal;
+import dbcontext.models.Order;
 import models.MealCount;
 import models.MealOrder;
 
@@ -41,8 +42,19 @@ public class MealsServlet extends HttpServlet {
         try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
-            MealCount[] mealOrder = mapper.readValue(request.getReader(), MealCount[].class);
-            String name = "some name";
+            MealCount[] mealCounts = mapper.readValue(request.getReader(), MealCount[].class);
+            Meal[] meals = new Meal[mealCounts.length];
+            for(int i = 0; i < mealCounts.length; i++) {
+                meals[i] = dbContext.getMealRepository().getMeal(mealCounts[i].getMealId());
+            }
+            //int userId = (int)request.getAttribute("userId");
+            Order order = dbContext.getOrderRepository().createOrder(meals, 1);
+            if(order!=null) {
+                String path = String.format("/orders?id=%s", order.getId());
+                response.setStatus(301);
+                response.setHeader("Location", path);
+                response.setHeader("Connection", "close");
+            }
         } catch (Exception e) {
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/error.jsp").forward(request, response);

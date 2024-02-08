@@ -9,7 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="removed pass" />
+    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="removed pass">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/orders/order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/IMealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/IMealRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/IOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/MarioBrothersDBContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/MarioBrothersDBContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/MealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/MealRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/MealCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/MealCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dao/LoginDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -63,7 +81,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Facets",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.29493892",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
@@ -80,12 +98,12 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.85" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.85" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/MarioBrothers_war_exploded/meals" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/meals" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="MarioBrothers:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/MarioBrothers_war_exploded" />
+            <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
@@ -193,6 +211,7 @@
       <workItem from="1707235708712" duration="4157000" />
       <workItem from="1707296566870" duration="5109000" />
       <workItem from="1707301920262" duration="27174000" />
+      <workItem from="1707341839806" duration="18894000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1706227481986</created>
@@ -285,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707341750416</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="removed pass">
+      <created>1707341948868</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1707341948868</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,9 +345,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="29" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

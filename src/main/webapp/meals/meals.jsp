@@ -75,21 +75,23 @@
     async function postMeals() {
         const myMeals = [...fetchSelectedMeals()];
         const data = JSON.stringify(myMeals);
-        const url = 'http://localhost:8080/MarioBrothers_war_exploded/meals';
-        let res = await fetch(url, {
+        const url = window.location.href;
+        console.log('window location');
+        console.log(url);
+        let response = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: data,
-        });
-        if (res.ok) {
-            let ret = await res.json();
-            return JSON.parse(ret.data);
+        }).then(response => {
 
-        } else {
-            return `HTTP error: ${res.status}`;
-        }
+            if (response.redirected) {
+                window.location.replace(response.url);
+            }
+        }).catch(function(err) {
+            console.info(err + " url: " + url);
+        });
     }
 </script>
 </body>

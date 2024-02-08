@@ -1,6 +1,6 @@
 package com.meals;
 
-import models.User;
+import dbcontext.models.User;
 import models.dao.UserDao;
 
 import java.io.*;

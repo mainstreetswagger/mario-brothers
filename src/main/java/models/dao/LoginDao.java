@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import bean.LoginBean;
-import models.DbConfiguration;
+import dbcontext.DbConfiguration;
 
 public class LoginDao {
 

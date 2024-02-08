@@ -1,7 +1,7 @@
 package models.dao;
 
-import models.DbConfiguration;
-import models.User;
+import dbcontext.DbConfiguration;
+import dbcontext.models.User;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

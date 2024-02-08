@@ -1,38 +1,26 @@
 package dbcontext;
 
-import dbcontext.models.Meal;
-import dbcontext.models.Order;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
-import java.util.ArrayList;
 
 public class MarioBrothersDBContext {
-    private Statement stmt;
-    private Connection con;
-
+    private Connection connection;
     private IMealRepository mealRepository;
+    private IOrderRepository orderRepository;
 
     public MarioBrothersDBContext() {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(DbConfiguration.url,DbConfiguration.user,DbConfiguration.password);
-            stmt = con.createStatement();
-            mealRepository = new MealRepository(stmt);
-
-        }catch(Exception e){ System.out.println(e);}
+            connection = DriverManager.getConnection(DbConfiguration.url,DbConfiguration.user,DbConfiguration.password);
+            mealRepository = new MealRepository(connection);
+            orderRepository = new OrderRepository(connection);
+        } catch(Exception e) {
+            System.out.println(e);
+        }
     }
     public IMealRepository getMealRepository() {
         return mealRepository;
     }
+    public IOrderRepository getOrderRepository() { return orderRepository; }
 
-    public void close() {
-        try {
-            this.mealRepository.close();
-        } catch(Exception e) {
-            System.out.println(e);
-        }
-
-    }
 }
