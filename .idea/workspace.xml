@@ -10,23 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="removed pass">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/orders/order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IMealOrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/MealOrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/MealReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/IMealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/IMealRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/IOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/IMealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IMealRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IOrderRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/MarioBrothersDBContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/MarioBrothersDBContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/MealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/MealRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/MealCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/MealCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dao/LoginDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/MealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/MealRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/MealOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/orders/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders/order.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -65,28 +63,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/KWalker/IdeaProjects/MarioBrothers/src/main/java/dbcontext/models",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29493892",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/KWalker/IdeaProjects/MarioBrothers/src/main/java/dbcontext/models&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29493892&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\KWalker\IdeaProjects\MarioBrothers\src\main\java\dbcontext\models" />
@@ -212,6 +210,7 @@
       <workItem from="1707296566870" duration="5109000" />
       <workItem from="1707301920262" duration="27174000" />
       <workItem from="1707341839806" duration="18894000" />
+      <workItem from="1707395232373" duration="10985000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1706227481986</created>
@@ -346,7 +345,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java</url>
-          <line>32</line>
+          <line>44</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>

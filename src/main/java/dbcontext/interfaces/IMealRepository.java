@@ -1,4 +1,4 @@
-package dbcontext;
+package dbcontext.interfaces;
 
 import dbcontext.models.Meal;
 

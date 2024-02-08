@@ -3,6 +3,7 @@ package com.meals;
 import dbcontext.MarioBrothersDBContext;
 import dbcontext.models.Meal;
 import dbcontext.models.Order;
+import models.MealReport;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -22,6 +23,17 @@ public class OrdersServlet extends HttpServlet {
         try {
             int id = Integer.parseInt(request.getParameter("id"));
             Order order = dbContext.getOrderRepository().getOrder(id);
+            String counts = request.getParameter("counts");
+            MealReport[] reports = null;
+            if(counts != null && counts != "") {
+                String[] reportArr = counts.split(",");
+                reports = new MealReport[reportArr.length];
+                for(int i = 0; i < reportArr.length; i++) {
+                    int reportId = Integer.parseInt(reportArr[i]);
+                    reports[i] = dbContext.getMealOrderRepository().getMealReport(reportId);
+                }
+            }
+            request.setAttribute("reports", reports);
             request.setAttribute("order", order);
             request.getRequestDispatcher("/orders/order.jsp").forward(request, response);
         } catch (Exception e) {

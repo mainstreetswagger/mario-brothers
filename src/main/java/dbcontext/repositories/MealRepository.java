@@ -1,5 +1,6 @@
-package dbcontext;
+package dbcontext.repositories;
 
+import dbcontext.interfaces.IMealRepository;
 import dbcontext.models.Meal;
 
 import java.sql.Connection;

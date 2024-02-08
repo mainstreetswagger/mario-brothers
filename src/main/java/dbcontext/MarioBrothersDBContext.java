@@ -1,5 +1,12 @@
 package dbcontext;
 
+import dbcontext.interfaces.IMealOrderRepository;
+import dbcontext.interfaces.IMealRepository;
+import dbcontext.interfaces.IOrderRepository;
+import dbcontext.repositories.MealOrderRepository;
+import dbcontext.repositories.MealRepository;
+import dbcontext.repositories.OrderRepository;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -7,6 +14,7 @@ public class MarioBrothersDBContext {
     private Connection connection;
     private IMealRepository mealRepository;
     private IOrderRepository orderRepository;
+    private IMealOrderRepository mealOrderRepository;
 
     public MarioBrothersDBContext() {
         try{
@@ -14,6 +22,7 @@ public class MarioBrothersDBContext {
             connection = DriverManager.getConnection(DbConfiguration.url,DbConfiguration.user,DbConfiguration.password);
             mealRepository = new MealRepository(connection);
             orderRepository = new OrderRepository(connection);
+            mealOrderRepository = new MealOrderRepository(connection);
         } catch(Exception e) {
             System.out.println(e);
         }
@@ -22,5 +31,6 @@ public class MarioBrothersDBContext {
         return mealRepository;
     }
     public IOrderRepository getOrderRepository() { return orderRepository; }
+    public IMealOrderRepository getMealOrderRepository() { return mealOrderRepository; }
 
 }

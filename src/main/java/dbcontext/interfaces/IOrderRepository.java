@@ -1,4 +1,4 @@
-package dbcontext;
+package dbcontext.interfaces;
 
 import dbcontext.models.Meal;
 import dbcontext.models.Order;
@@ -8,5 +8,5 @@ import java.util.ArrayList;
 public interface IOrderRepository {
     ArrayList<Order> getOrders();
     Order getOrder(int orderId);
-    Order createOrder(Meal[] meals, int userId);
+    int createOrder(Meal[] meals, int userId, double total);
 }
