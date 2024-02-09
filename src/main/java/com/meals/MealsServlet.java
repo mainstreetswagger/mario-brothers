@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -57,9 +58,13 @@ public class MealsServlet extends HttpServlet {
                     .filter(m -> (m != null))
                     .toArray(MealCount[]::new);
 
-            //int userId = (int)request.getAttribute("userId");
-
-            int orderId = dbContext.getOrderRepository().createOrder(meals, 1, total);
+            HttpSession session = request.getSession();
+            Object obj = session.getAttribute("userId");
+            int userId = 1;
+            if (obj != null){
+                userId = Integer.parseInt(obj.toString());
+            }
+            int orderId = dbContext.getOrderRepository().createOrder(meals, userId, total);
             if(orderId > 0) {
                 int[] mealOrders = new int[meals.length];
                 for(int i = 0; i < filteredMeals.length; i++) {

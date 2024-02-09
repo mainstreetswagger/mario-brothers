@@ -19,7 +19,7 @@ public class UserDao {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection(DbConfiguration.url, DbConfiguration.user, DbConfiguration.password);
+                .getConnection(DbConfiguration.url, DbConfiguration.user, "74524Zaur%");
 
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
             preparedStatement.setString(2, user.getUserName());

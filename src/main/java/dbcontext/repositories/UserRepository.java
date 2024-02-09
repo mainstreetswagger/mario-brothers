@@ -24,7 +24,7 @@ public class UserRepository implements IUserRepository {
             stmt.setInt(1, id);
             rs = stmt.executeQuery();
             while(rs.next()) {
-                String userName = rs.getString("userName");
+                String userName = rs.getString("name");
                 String password = rs.getString("password");
                 short role = rs.getShort("role");
                 user = new User(id, userName, password, role);

@@ -32,13 +32,18 @@ public class LoginServlet extends HttpServlet {
         loginBean.setPassword(password);
 
         try {
-            if (loginDao.validate(loginBean)) {
-                response.sendRedirect("loginsuccess.jsp");
-            } else {
+            int userId = loginDao.getUserID(loginBean);
+            if (userId > 0) {
                 HttpSession session = request.getSession();
+                session.setAttribute("userId", userId);
+
+                response.sendRedirect("meals");
+            } else {
+                request.setAttribute("error","There is no such a user");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
+
 }

@@ -9,20 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="orders post">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/enums/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/orders/ordersList.jsp" afterDir="false" />
+    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="added js post method in meals.jsp">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/MarioBrothersDBContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/MarioBrothersDBContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IOrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/orders/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders/order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/DbConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/DbConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dao/LoginDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dao/UserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +35,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -50,9 +48,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectId" id="2bSxDRXaxsQxASWWI2KufJf5ukM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -61,40 +56,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/KWalker/IdeaProjects/MarioBrothers/src/main/java/dbcontext/models&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.29493892&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Tomcat Server.Tomcat 9.0.85.executor": "Debug",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/KWalker/IdeaProjects/alex",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.29493892",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\KWalker\IdeaProjects\MarioBrothers\src\main\java\dbcontext\models" />
-      <recent name="C:\Users\KWalker\IdeaProjects\MarioBrothers\src\main\java" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="models" />
-    </key>
-  </component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.85" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.85" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/meals" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/login.jsp" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="MarioBrothers:war exploded">
@@ -201,15 +188,7 @@
       <workItem from="1706827968475" duration="282000" />
       <workItem from="1706828276776" duration="4219000" />
       <workItem from="1706894445103" duration="6477000" />
-      <workItem from="1707088291116" duration="4490000" />
-      <workItem from="1707180981244" duration="2762000" />
-      <workItem from="1707223423751" duration="627000" />
-      <workItem from="1707235708712" duration="4157000" />
-      <workItem from="1707296566870" duration="5109000" />
-      <workItem from="1707301920262" duration="27174000" />
-      <workItem from="1707341839806" duration="18894000" />
-      <workItem from="1707395232373" duration="14074000" />
-      <workItem from="1707423036147" duration="11440000" />
+      <workItem from="1707088291116" duration="4185000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1706227481986</created>
@@ -267,56 +246,7 @@
       <option name="project" value="LOCAL" />
       <updated>1706924943543</updated>
     </task>
-    <task id="LOCAL-00009" summary="changed Array to ArrayList in MealsServlet.java">
-      <created>1707095264055</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1707095264055</updated>
-    </task>
-    <task id="LOCAL-00010" summary="changed Array to ArrayList in MealsServlet.java">
-      <created>1707095346318</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1707095346318</updated>
-    </task>
-    <task id="LOCAL-00011" summary="added models">
-      <created>1707238691957</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1707238691957</updated>
-    </task>
-    <task id="LOCAL-00012" summary="removed pass">
-      <created>1707239242954</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1707239242954</updated>
-    </task>
-    <task id="LOCAL-00013" summary="removed pass">
-      <created>1707341750415</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1707341750416</updated>
-    </task>
-    <task id="LOCAL-00014" summary="removed pass">
-      <created>1707341948868</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1707341948868</updated>
-    </task>
-    <task id="LOCAL-00015" summary="orders post">
-      <created>1707409684241</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1707409684241</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,28 +271,27 @@
     <MESSAGE value="tried to connect to db" />
     <MESSAGE value="changed password" />
     <MESSAGE value="added js post method in meals.jsp" />
-    <MESSAGE value="changed Array to ArrayList in MealsServlet.java" />
-    <MESSAGE value="added models" />
-    <MESSAGE value="removed pass" />
-    <MESSAGE value="orders post" />
-    <option name="LAST_COMMIT_MESSAGE" value="orders post" />
+    <option name="LAST_COMMIT_MESSAGE" value="added js post method in meals.jsp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="47" />
+          <line>24</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
-        <watch expression="sb.value[0]" />
-        <watch expression="sb.value[0]" />
-        <watch expression="e" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>
