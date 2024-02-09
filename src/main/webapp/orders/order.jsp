@@ -1,5 +1,7 @@
 <%@ page import="dbcontext.models.Order" %>
-<%@ page import="models.MealReport" %><%--
+<%@ page import="dbcontext.enums.OrderStatus" %>
+<%@ page import="models.MealReport" %>
+<%@ page import="dbcontext.models.User" %><%--
   Created by IntelliJ IDEA.
   User: KWalker
   Date: 2/8/2024
@@ -10,13 +12,16 @@
 <html>
 <head>
     <%Order order = (Order)request.getAttribute("order");%>
-    <title>Order <%=order.getId()%></title>
+    <%User user = (User)request.getAttribute("user");%>
+    <title>Order#<%=order.getId()%></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
-    <h1>Order <%=order.getId()%></h1>
-    <h1><%=order.getCreatedAt()%></h1>
-    <h1><%=order.getTotal()%></h1>
+    <div class="card-group">
+        <h3>Order#<%=order.getId()%> <%=OrderStatus.values()[order.getStatus() - 1].name()%></h3>
+        <h3>Date: <%=order.getCreatedAt()%></h3>
+        <h3>Customer: <%=user.getUserName()%></h3>
+    </div>
 <div>
     <table class="table">
         <thead>

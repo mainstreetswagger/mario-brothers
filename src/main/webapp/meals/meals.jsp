@@ -14,38 +14,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
-<div>
-    <button class="btn-primary" type="button" onclick="postMeals()">Order</button>
-</div>
-<div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-            </tr>
-        </thead>
-        <tbody>
-            <%ArrayList<Meal> meals = (ArrayList<Meal>)request.getAttribute("meals");%>
-            <%for(int i = 0; i < meals.size(); i++) {%>
-            <tr>
-                <th scope="col"><%=meals.get(i).getId()%></th>
-                <td><%=meals.get(i).getName()%></td>
-                <td><%=meals.get(i).getPrice()%>$</td>
-                <td>
-                    <div class="input-group form-group">
-                        <button class="btn btn-outline-secondary" type="button" onclick="decrement(<%=meals.get(i).getId()%>)">-</button>
-                        <span class="form-control" id=<%=meals.get(i).getId()%>>0</span>
-                        <button class="btn btn-outline-secondary" type="button" onclick="increment(<%=meals.get(i).getId()%>)">+</button>
-                    </div>
-                </td>
-            </tr>
-        <%}%>
-        </tbody>
-    </table>
-</div>
+    <div class="container m-2">
+        <div><h2>Mario Brothers</h2></div>
+        <div class="w-75 border border-dark rounded">
+            <div class="float-lg-end m-2">
+                <button class="btn btn-success" type="button" onclick="postMeals()">Order!</button>
+            </div>
+            <table class="table">
+                <thead>
+                <tr class="">
+                    <th class="col-1">#</th>
+                    <th class="col-3">Name</th>
+                    <th class="col-1">Price</th>
+                    <th class="col-2">Quantity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <%ArrayList<Meal> meals = (ArrayList<Meal>)request.getAttribute("meals");%>
+                <%for(int i = 0; i < meals.size(); i++) {%>
+                <tr class="">
+                    <th class="col-1"><%=meals.get(i).getId()%></th>
+                    <td class="col-3"><%=meals.get(i).getName()%></td>
+                    <td class="col-1"><%=meals.get(i).getPrice()%>$</td>
+                    <td class="col-2">
+                        <div class="input-group form-group">
+                            <button class="btn btn-outline-secondary" type="button" onclick="decrement(<%=meals.get(i).getId()%>)">-</button>
+                            <span class="form-control" id=<%=meals.get(i).getId()%>>0</span>
+                            <button class="btn btn-outline-secondary" type="button" onclick="increment(<%=meals.get(i).getId()%>)">+</button>
+                        </div>
+                    </td>
+                </tr>
+                <%}%>
+                </tbody>
+            </table>
+        </div>
+    </div>
 <script type="text/javascript">
     function increment(id) {
         let increment = document.getElementById(id);
@@ -61,7 +64,6 @@
     function fetchSelectedMeals() {
         let spanElements = document.getElementsByTagName("span");
         const myMeals = [];
-        console.log("span elements " + spanElements.length);
         for(let i = 0; i < spanElements.length; i++) {
             let count = parseInt(spanElements[i].textContent);
             if(count > 0) {
@@ -76,8 +78,7 @@
         const myMeals = [...fetchSelectedMeals()];
         const data = JSON.stringify(myMeals);
         const url = window.location.href;
-        console.log('window location');
-        console.log(url);
+
         let response = await fetch(url, {
             method: 'POST',
             headers: {
@@ -85,7 +86,6 @@
             },
             body: data,
         }).then(response => {
-
             if (response.redirected) {
                 window.location.replace(response.url);
             }

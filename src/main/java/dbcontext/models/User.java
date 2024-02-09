@@ -1,17 +1,34 @@
 package dbcontext.models;
 
 public class User {
+    public User() {
+    }
+    public User(int id, String userName, String password, int role) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.role = role;
+    }
+
+    private int id;
     private String userName;
     private String password;
+    private int role;
 
-    private int Role;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getRole() {
-        return Role;
+        return role;
     }
 
     public void setRole(int role) {
-        Role = role;
+        this.role = role;
     }
 
     public String getUserName() {

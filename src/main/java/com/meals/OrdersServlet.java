@@ -3,6 +3,7 @@ package com.meals;
 import dbcontext.MarioBrothersDBContext;
 import dbcontext.models.Meal;
 import dbcontext.models.Order;
+import dbcontext.models.User;
 import models.MealReport;
 
 import javax.servlet.*;
@@ -23,18 +24,22 @@ public class OrdersServlet extends HttpServlet {
         try {
             int id = Integer.parseInt(request.getParameter("id"));
             Order order = dbContext.getOrderRepository().getOrder(id);
-            String counts = request.getParameter("counts");
-            MealReport[] reports = null;
-            if(counts != null && counts != "") {
-                String[] reportArr = counts.split(",");
-                reports = new MealReport[reportArr.length];
-                for(int i = 0; i < reportArr.length; i++) {
-                    int reportId = Integer.parseInt(reportArr[i]);
-                    reports[i] = dbContext.getMealOrderRepository().getMealReport(reportId);
+            if(order != null) {
+                User user = dbContext.getUserRepository().getUser(order.getUserId());
+                String counts = request.getParameter("counts");
+                MealReport[] reports = null;
+                if (counts != null && counts != "") {
+                    String[] reportArr = counts.split(",");
+                    reports = new MealReport[reportArr.length];
+                    for (int i = 0; i < reportArr.length; i++) {
+                        int reportId = Integer.parseInt(reportArr[i]);
+                        reports[i] = dbContext.getMealOrderRepository().getMealReport(reportId);
+                    }
                 }
+                request.setAttribute("reports", reports);
+                request.setAttribute("order", order);
+                request.setAttribute("user", user);
             }
-            request.setAttribute("reports", reports);
-            request.setAttribute("order", order);
             request.getRequestDispatcher("/orders/order.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.getMessage());

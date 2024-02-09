@@ -1,5 +1,6 @@
 package dbcontext.repositories;
 
+import dbcontext.enums.OrderStatus;
 import dbcontext.interfaces.IOrderRepository;
 import dbcontext.models.Meal;
 import dbcontext.models.Order;
@@ -92,5 +93,40 @@ public class OrderRepository implements IOrderRepository {
             System.out.println(e);
         }
         return orderId;
+    }
+
+    @Override
+    public short updateStatus(int orderId) {
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            Order order = this.getOrder(orderId);
+            if(order == null)
+                return 0;
+            OrderStatus status = OrderStatus.values()[order.getStatus() - 1];
+            OrderStatus nextStatus = null;
+
+            if(status == OrderStatus.New)
+                nextStatus = OrderStatus.InProcess;
+            else if(status == OrderStatus.InProcess)
+                nextStatus = OrderStatus.Ready;
+            else
+                return 0;
+
+            stmt = connection.createStatement();
+            String command = String.format("update orders set status = %s where id = %s;", nextStatus.getValue(), orderId);
+            int count = stmt.executeUpdate(command, Statement.RETURN_GENERATED_KEYS);
+            if(count > 0) {
+                return nextStatus.getValue();
+            }
+            if(rs != null)
+                rs.close();
+            if(stmt != null)
+                stmt.close();
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+        return 0;
     }
 }

@@ -9,4 +9,5 @@ public interface IOrderRepository {
     ArrayList<Order> getOrders();
     Order getOrder(int orderId);
     int createOrder(Meal[] meals, int userId, double total);
+    short updateStatus(int orderId);
 }

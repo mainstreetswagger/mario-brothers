@@ -9,21 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="removed pass">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IMealOrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/MealOrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/MealReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="orders post">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/enums/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/orders/ordersList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/IMealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IMealRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/MarioBrothersDBContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/MarioBrothersDBContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/MealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/MealRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/MealOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/meals/meals.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/orders/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders/order.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +208,8 @@
       <workItem from="1707296566870" duration="5109000" />
       <workItem from="1707301920262" duration="27174000" />
       <workItem from="1707341839806" duration="18894000" />
-      <workItem from="1707395232373" duration="10985000" />
+      <workItem from="1707395232373" duration="14074000" />
+      <workItem from="1707423036147" duration="11440000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1706227481986</created>
@@ -310,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707341948868</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="orders post">
+      <created>1707409684241</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1707409684241</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,14 +344,15 @@
     <MESSAGE value="changed Array to ArrayList in MealsServlet.java" />
     <MESSAGE value="added models" />
     <MESSAGE value="removed pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed pass" />
+    <MESSAGE value="orders post" />
+    <option name="LAST_COMMIT_MESSAGE" value="orders post" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java</url>
-          <line>44</line>
+          <line>49</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
