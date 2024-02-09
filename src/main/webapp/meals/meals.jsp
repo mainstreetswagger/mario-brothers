@@ -20,9 +20,9 @@
             <div class="float-lg-end m-2">
                 <button class="btn btn-success" type="button" onclick="postMeals()">Order!</button>
             </div>
-            <table class="table">
+                <table class="table">
                 <thead>
-                <tr class="">
+                <tr>
                     <th class="col-1">#</th>
                     <th class="col-3">Name</th>
                     <th class="col-1">Price</th>
@@ -32,7 +32,7 @@
                 <tbody>
                 <%ArrayList<Meal> meals = (ArrayList<Meal>)request.getAttribute("meals");%>
                 <%for(int i = 0; i < meals.size(); i++) {%>
-                <tr class="">
+                <tr>
                     <th class="col-1"><%=meals.get(i).getId()%></th>
                     <td class="col-3"><%=meals.get(i).getName()%></td>
                     <td class="col-1"><%=meals.get(i).getPrice()%>$</td>

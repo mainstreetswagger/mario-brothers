@@ -44,11 +44,10 @@ public class UserRepository implements IUserRepository {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         User user = null;
-        try (
-             PreparedStatement preparedStatement = connection
-                     .prepareStatement("select * from users where name = ? and password = ? ")) {
-            preparedStatement.setString(1, name);
-            preparedStatement.setString(2, password);
+        try {
+            stmt = connection.prepareStatement("select * from users where name = ? and password = ? ");
+            stmt.setString(1, name);
+            stmt.setString(2, password);
 
             rs = stmt.executeQuery();
             if (rs == null){
@@ -63,11 +62,11 @@ public class UserRepository implements IUserRepository {
                 rs.close();
             if(stmt != null)
                 stmt.close();
-            System.out.println(preparedStatement);
+            System.out.println(stmt);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        return user;
     }
 }
