@@ -1,12 +1,11 @@
 package dbcontext.repositories;
 
+import dbcontext.DbConfiguration;
 import dbcontext.interfaces.IUserRepository;
 import dbcontext.models.Meal;
 import dbcontext.models.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class UserRepository implements IUserRepository {
     private Connection connection;
@@ -38,5 +37,37 @@ public class UserRepository implements IUserRepository {
             System.out.println(e);
         }
         return user;
+    }
+
+    @Override
+    public User getUser(String name, String password) {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        User user = null;
+        try (
+             PreparedStatement preparedStatement = connection
+                     .prepareStatement("select * from users where name = ? and password = ? ")) {
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, password);
+
+            rs = stmt.executeQuery();
+            if (rs == null){
+                return user;
+            }
+            while(rs.next()) {
+                int id = rs.getInt("id");
+                short role = rs.getShort("role");
+                user = new User(id, name, password, role);
+            }
+            if(rs != null)
+                rs.close();
+            if(stmt != null)
+                stmt.close();
+            System.out.println(preparedStatement);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }

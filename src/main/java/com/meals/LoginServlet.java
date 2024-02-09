@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.LoginBean;
+import dbcontext.models.User;
 import models.dao.LoginDao;
 
 @WebServlet("/LoginServlet")
@@ -32,10 +33,11 @@ public class LoginServlet extends HttpServlet {
         loginBean.setPassword(password);
 
         try {
-            int userId = loginDao.getUserID(loginBean);
-            if (userId > 0) {
+            User user = loginDao.getUser(loginBean);
+            if (user != null) {
                 HttpSession session = request.getSession();
-                session.setAttribute("userId", userId);
+                session.setAttribute("userId", user.getId());
+                session.setAttribute("userRole", user.getRole());
 
                 response.sendRedirect("meals");
             } else {

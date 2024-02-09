@@ -8,32 +8,14 @@ import java.sql.SQLException;
 
 import bean.LoginBean;
 import dbcontext.DbConfiguration;
+import dbcontext.MarioBrothersDBContext;
+import dbcontext.models.User;
 
 public class LoginDao {
-        public int getUserID(LoginBean loginBean) throws ClassNotFoundException {
-            int userID = 0;
-            Class.forName("com.mysql.jdbc.Driver");
+    private MarioBrothersDBContext dbContext = new MarioBrothersDBContext();
+        public User getUser(LoginBean loginBean) throws ClassNotFoundException {
 
-            try (Connection connection = DriverManager
-                    .getConnection(DbConfiguration.url, "root", "74524Zaur%");
-
-                 PreparedStatement preparedStatement = connection
-                         .prepareStatement("select * from users where name = ? and password = ? ")) {
-                preparedStatement.setString(1, loginBean.getUsername());
-                preparedStatement.setString(2, loginBean.getPassword());
-
-                System.out.println(preparedStatement);
-                ResultSet rs = preparedStatement.executeQuery();
-                if(rs == null){
-                    return userID;
-                }
-                rs.next();
-                userID = rs.getInt("id");
-
-            } catch (SQLException e) {
-                printSQLException(e);
-            }
-            return userID;
+            return dbContext.getUserRepository().getUser(loginBean.getUsername(), loginBean.getPassword());
         }
     public int getUserID(String username) throws ClassNotFoundException {
         int userID = 0;
