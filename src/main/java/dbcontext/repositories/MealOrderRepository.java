@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MealOrderRepository implements IMealOrderRepository {
@@ -53,7 +54,8 @@ public class MealOrderRepository implements IMealOrderRepository {
         ResultSet rs = null;
         MealReport report = null;
         try {
-            stmt = connection.prepareStatement("select mo.count, m.name, m.price from mealorders mo" +
+            stmt = connection.prepareStatement(
+                    "select mo.count, m.name, m.price from mealorders mo" +
                     " inner join meals m on mo.mealId = m.id " +
                     "where mo.id = ? limit 1;");
             stmt.setInt(1, mealOrderId);
@@ -73,6 +75,37 @@ public class MealOrderRepository implements IMealOrderRepository {
             System.out.println(e);
         }
         return report;
+    }
+
+    @Override
+    public List<MealReport> getMealReportsByOrderId(int orderId) {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        List<MealReport> mealReports = new ArrayList<MealReport>();
+        try {
+            stmt = connection.prepareStatement(
+                    "select mo.count, m.name, m.price from mealorders mo" +
+                            " inner join meals m on mo.mealId = m.id " +
+                            "where mo.orderId = ?;");
+            stmt.setInt(1, orderId);
+            rs = stmt.executeQuery();
+            if(rs != null) {
+                while (rs.next()) {
+                    int count = rs.getInt("count");
+                    double price = rs.getDouble("price");
+                    String name = rs.getString("name");
+                    mealReports.add(new MealReport(name, price, count));
+                }
+                if (rs != null)
+                    rs.close();
+                if (stmt != null)
+                    stmt.close();
+            }
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+        return mealReports;
     }
 
     @Override

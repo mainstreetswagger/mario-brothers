@@ -1,7 +1,8 @@
 <%@ page import="dbcontext.models.Order" %>
 <%@ page import="dbcontext.enums.OrderStatus" %>
 <%@ page import="models.MealReport" %>
-<%@ page import="dbcontext.models.User" %><%--
+<%@ page import="dbcontext.models.User" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: KWalker
   Date: 2/8/2024
@@ -17,10 +18,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
+<div class="m-2 d-flex align-items-center justify-content-center">
 <div class="card mb-3" style="max-width: 36rem;">
     <div class="card-header">
-        <p>Order: <%=order.getId()%></p>
-        <p>Status: <%=OrderStatus.values()[order.getStatus() - 1].name()%></p>
+        <div class="d-flex justify-content-between">
+            <div>
+                <a href="/my-orders">My Orders</a>
+            </div>
+            <div>
+                <a href="/meals">Meals Menu</a>
+            </div>
+        </div>
+        <div>
+            <p>Order: <%=order.getId()%> - <%=OrderStatus.values()[order.getStatus() - 1].name()%></p>
+        </div>
     </div>
     <div class="card-body">
         <h5 class="card-title">Date: <%=order.getCreatedAt()%></h5>
@@ -36,16 +47,14 @@
             </tr>
             </thead>
             <tbody>
-            <%MealReport[] reports = (MealReport[])request.getAttribute("reports");%>
-            <%double total = 0;%>
-            <%for(int i = 0; i < reports.length; i++) {%>
-            <%double subtotal = reports[i].getCount()*reports[i].getPrice();%>
-            <%total += subtotal;%>
+            <%List<MealReport> reports = (List<MealReport>)request.getAttribute("reports");%>
+            <%for(int i = 0; i < reports.size(); i++) {%>
+            <%double subtotal = reports.get(i).getCount()*reports.get(i).getPrice();%>
             <tr>
-                <th scope="col"><%=reports[i].getMealName()%></th>
-                <td><%=reports[i].getCount()%></td>
+                <th scope="col"><%=reports.get(i).getMealName()%></th>
+                <td><%=reports.get(i).getCount()%></td>
                 <td>X</td>
-                <td><%=reports[i].getPrice()%>$</td>
+                <td><%=reports.get(i).getPrice()%>$</td>
                 <td><%=subtotal%></td>
             </tr>
             <%}%>
@@ -54,12 +63,12 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><%=total%>$</td>
+                <td><%=order.getTotal()%>$</td>
             </tr>
             </tbody>
         </table>
     </div>
-
+</div>
 </div>
 </body>
 </html>

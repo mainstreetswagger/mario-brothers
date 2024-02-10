@@ -70,7 +70,7 @@ public class OrderRepository implements IOrderRepository {
     }
 
     @Override
-    public int createOrder(Meal[] meals, int userId, double total) {
+    public int createOrder(int userId, double total) {
         int orderId = 0;
         Statement stmt = null;
         ResultSet rs = null;
@@ -128,5 +128,32 @@ public class OrderRepository implements IOrderRepository {
             System.out.println(e);
         }
         return 0;
+    }
+
+    @Override
+    public ArrayList<Order> getOrdersByUserId(int userId) {
+        ArrayList<Order> orders = new ArrayList<Order>();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            stmt = connection.prepareStatement("select * from orders o where o.userId = ?;");
+            stmt.setInt(1, userId);
+            rs = stmt.executeQuery();
+            while(rs.next()){
+                int id = rs.getInt("id");
+                Timestamp timestamp = rs.getTimestamp("createdAt");
+                Date createdAt = new Date(timestamp.getTime());
+                double priceTotal = rs.getDouble("priceTotal");
+                short status = rs.getShort("status");
+                orders.add(new Order(id, userId, createdAt, priceTotal, status));
+            }
+            if(rs != null)
+                rs.close();
+            if(stmt != null)
+                stmt.close();
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+        return orders;
     }
 }

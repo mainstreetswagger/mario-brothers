@@ -26,6 +26,8 @@ public class MealsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             ArrayList<Meal> meals = dbContext.getMealRepository().getMeals();
+            request.setAttribute("title", "Meals");
+            request.setAttribute("header", "Mario Brothers Menu");
             request.setAttribute("meals", meals);
             request.getRequestDispatcher("/meals/meals.jsp").forward(request, response);
         } catch (Exception e) {
@@ -40,20 +42,15 @@ public class MealsServlet extends HttpServlet {
             ObjectMapper mapper = new ObjectMapper();
             mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
             MealCount[] mealCounts = mapper.readValue(request.getReader(), MealCount[].class);
-            Meal[] meals = new Meal[mealCounts.length];
             MealCount[] filteredMeals = new MealCount[mealCounts.length];
             double total = 0;
             for(int i = 0; i < mealCounts.length; i++) {
                 Meal meal = dbContext.getMealRepository().getMeal(mealCounts[i].getMealId());
                 if(meal != null) {
-                    meals[i] = meal;
                     filteredMeals[i] = mealCounts[i];
                     total+=mealCounts[i].getCount() * meal.getPrice();
                 }
             }
-            meals = Arrays.stream(meals)
-                    .filter(m -> (m != null))
-                    .toArray(Meal[]::new);
             filteredMeals = Arrays.stream(filteredMeals)
                     .filter(m -> (m != null))
                     .toArray(MealCount[]::new);
@@ -64,23 +61,15 @@ public class MealsServlet extends HttpServlet {
             if (obj != null){
                 userId = Integer.parseInt(obj.toString());
             }
-            int orderId = dbContext.getOrderRepository().createOrder(meals, userId, total);
+            int orderId = dbContext.getOrderRepository().createOrder(userId, total);
             if(orderId > 0) {
-                int[] mealOrders = new int[meals.length];
+                int[] mealOrders = new int[filteredMeals.length];
                 for(int i = 0; i < filteredMeals.length; i++) {
                     mealOrders[i] = dbContext.getMealOrderRepository().createMealOrder(orderId, filteredMeals[i]);
                 }
-                StringBuilder sb = new StringBuilder("/orders?id=");
-                sb.append(orderId);
-                sb.append("&counts=");
-                for(int i = 0; i < mealOrders.length; i++) {
-                    if(i > 0)
-                        sb.append(',');
-                    sb.append(mealOrders[i]);
-                }
-                String path = sb.toString();
+                StringBuilder sb = new StringBuilder("/orders?id=").append(orderId);
                 response.setStatus(301);
-                response.setHeader("Location", path);
+                response.setHeader("Location", sb.toString());
                 response.setHeader("Connection", "close");
             }
         } catch (Exception e) {

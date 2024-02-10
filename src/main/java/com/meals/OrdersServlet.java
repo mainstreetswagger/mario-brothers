@@ -11,6 +11,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @WebServlet(name = "orders", urlPatterns = {"/orders"})
@@ -26,28 +27,18 @@ public class OrdersServlet extends HttpServlet {
             Order order = dbContext.getOrderRepository().getOrder(id);
             if(order != null) {
                 User user = dbContext.getUserRepository().getUser(order.getUserId());
-                String counts = request.getParameter("counts");
-                MealReport[] reports = null;
-                if (counts != null && counts != "") {
-                    String[] reportArr = counts.split(",");
-                    reports = new MealReport[reportArr.length];
-                    for (int i = 0; i < reportArr.length; i++) {
-                        int reportId = Integer.parseInt(reportArr[i]);
-                        reports[i] = dbContext.getMealOrderRepository().getMealReport(reportId);
-                    }
-                }
-                request.setAttribute("reports", reports);
+                List<MealReport> mealReports = dbContext.getMealOrderRepository().getMealReportsByOrderId(order.getId());
+                request.setAttribute("reports", mealReports);
                 request.setAttribute("order", order);
                 request.setAttribute("user", user);
             }
-            request.getRequestDispatcher("/orders/order.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/error.jsp").forward(request, response);
         }
         int id = Integer.parseInt(request.getParameter("id"));
 
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/orders/order.jsp").forward(request, response);
     }
 
     @Override

@@ -10,5 +10,6 @@ public interface IMealOrderRepository {
     List<MealOrder> getMealOrders();
     MealOrder getMealOrder(int id);
     MealReport getMealReport(int mealOrderId);
+    List<MealReport> getMealReportsByOrderId(int orderId);
     int createMealOrder(int orderId, MealCount meal);
 }
