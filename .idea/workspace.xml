@@ -9,13 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="added userId in session">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dbcontext/enums/Roles.java" afterDir="false" />
+    <list default="true" id="e4058540-b0e3-4367-9ba4-96c039e1a7fe" name="Changes" comment="added orders list">
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram/BotRequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram/MarioBot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram/MarioBotMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram/UserStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meals/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meals/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/DbConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/DbConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/interfaces/IUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/models/MarioUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbcontext/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dao/LoginDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/orders/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders/order.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,17 +38,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -55,30 +67,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Tomcat Server.Tomcat 9.0.85.executor": "Debug",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/KWalker/IdeaProjects/alex",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29493892",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.85.executor&quot;: &quot;Debug&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/KWalker/IdeaProjects/MarioBrothers/src/main/webapp/orders&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29493892&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\KWalker\IdeaProjects\MarioBrothers\src\main\webapp\orders" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MarioBot">
+    <configuration name="MarioBot" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="telegram.MarioBotMain" />
+      <module name="MarioBrothers" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.85" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.85" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/login.jsp" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -167,6 +191,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.MarioBot" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.85" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -188,6 +216,8 @@
       <workItem from="1706828276776" duration="4219000" />
       <workItem from="1706894445103" duration="6477000" />
       <workItem from="1707088291116" duration="4185000" />
+      <workItem from="1707564801949" duration="24087000" />
+      <workItem from="1707690449279" duration="5277000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1706227481986</created>
@@ -253,7 +283,21 @@
       <option name="project" value="LOCAL" />
       <updated>1707475409066</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="styled order.jsp">
+      <created>1707479744384</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707479744384</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added orders list">
+      <created>1707570820035</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707570820035</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,27 +323,31 @@
     <MESSAGE value="changed password" />
     <MESSAGE value="added js post method in meals.jsp" />
     <MESSAGE value="added userId in session" />
-    <option name="LAST_COMMIT_MESSAGE" value="added userId in session" />
+    <MESSAGE value="styled order.jsp" />
+    <MESSAGE value="added orders list" />
+    <option name="LAST_COMMIT_MESSAGE" value="added orders list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/meals/OrdersServlet.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="13" />
+          <line>22</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/meals/MealsServlet.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/src/main/java/telegram/BotRequestHandler.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="sb.value[0]" />
+        <watch expression="sb.value[0]" />
+        <watch expression="e" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -9,11 +9,11 @@ import java.sql.SQLException;
 import bean.LoginBean;
 import dbcontext.DbConfiguration;
 import dbcontext.MarioBrothersDBContext;
-import dbcontext.models.User;
+import dbcontext.models.MarioUser;
 
 public class LoginDao {
     private MarioBrothersDBContext dbContext = new MarioBrothersDBContext();
-        public User getUser(LoginBean loginBean) throws ClassNotFoundException {
+        public MarioUser getUser(LoginBean loginBean) throws ClassNotFoundException {
 
             return dbContext.getUserRepository().getUser(loginBean.getUsername(), loginBean.getPassword());
         }

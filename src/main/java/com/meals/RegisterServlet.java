@@ -1,6 +1,6 @@
 package com.meals;
 
-import dbcontext.models.User;
+import dbcontext.models.MarioUser;
 import models.dao.UserDao;
 
 import java.io.*;
@@ -36,7 +36,7 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         int role = request.getIntHeader("role");
 
-        User user = new User();
+        MarioUser user = new MarioUser();
         user.setUserName(userName);
         user.setPassword(password);
         user.setRole(role);

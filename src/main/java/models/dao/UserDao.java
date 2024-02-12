@@ -1,7 +1,7 @@
 package models.dao;
 
 import dbcontext.DbConfiguration;
-import dbcontext.models.User;
+import dbcontext.models.MarioUser;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class UserDao {
-    public int registerUser(User user) throws ClassNotFoundException {
+    public int registerUser(MarioUser user) throws ClassNotFoundException {
         String INSERT_USERS_SQL = "INSERT INTO mariobrothers.users" +
                 " (username, password, role) VALUES" +
                 "(?,?,?);";

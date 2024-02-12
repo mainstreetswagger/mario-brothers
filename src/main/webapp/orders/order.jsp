@@ -1,7 +1,7 @@
 <%@ page import="dbcontext.models.Order" %>
 <%@ page import="dbcontext.enums.OrderStatus" %>
 <%@ page import="models.MealReport" %>
-<%@ page import="dbcontext.models.User" %>
+<%@ page import="dbcontext.models.MarioUser" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: KWalker
@@ -13,7 +13,7 @@
 <html>
 <head>
     <%Order order = (Order)request.getAttribute("order");%>
-    <%User user = (User)request.getAttribute("user");%>
+    <%MarioUser user = (MarioUser)request.getAttribute("user");%>
     <title>Order#<%=order.getId()%></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>

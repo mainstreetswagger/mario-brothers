@@ -1,9 +1,9 @@
 package dbcontext.interfaces;
 
-import dbcontext.models.User;
+import dbcontext.models.MarioUser;
 
 public interface IUserRepository {
-    User getUser(int id);
-
-    User getUser(String name, String password);
+    MarioUser getUser(int id);
+    MarioUser getUser(String name, String password);
+    boolean hasUser(String name);
 }

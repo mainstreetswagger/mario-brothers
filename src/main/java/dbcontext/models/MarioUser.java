@@ -1,9 +1,9 @@
 package dbcontext.models;
 
-public class User {
-    public User() {
+public class MarioUser {
+    public MarioUser() {
     }
-    public User(int id, String userName, String password, int role) {
+    public MarioUser(int id, String userName, String password, int role) {
         this.id = id;
         this.userName = userName;
         this.password = password;

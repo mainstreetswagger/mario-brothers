@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.LoginBean;
-import dbcontext.models.User;
+import dbcontext.models.MarioUser;
 import models.dao.LoginDao;
 
 @WebServlet("/LoginServlet")
@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
         loginBean.setPassword(password);
 
         try {
-            User user = loginDao.getUser(loginBean);
+            MarioUser user = loginDao.getUser(loginBean);
             if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("userId", user.getId());

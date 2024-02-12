@@ -1,18 +1,15 @@
 package com.meals;
 
 import dbcontext.MarioBrothersDBContext;
-import dbcontext.models.Meal;
 import dbcontext.models.Order;
-import dbcontext.models.User;
+import dbcontext.models.MarioUser;
 import models.MealReport;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @WebServlet(name = "orders", urlPatterns = {"/orders"})
 public class OrdersServlet extends HttpServlet {
@@ -26,7 +23,7 @@ public class OrdersServlet extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id"));
             Order order = dbContext.getOrderRepository().getOrder(id);
             if(order != null) {
-                User user = dbContext.getUserRepository().getUser(order.getUserId());
+                MarioUser user = dbContext.getUserRepository().getUser(order.getUserId());
                 List<MealReport> mealReports = dbContext.getMealOrderRepository().getMealReportsByOrderId(order.getId());
                 request.setAttribute("reports", mealReports);
                 request.setAttribute("order", order);
