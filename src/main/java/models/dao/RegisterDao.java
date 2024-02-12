@@ -8,24 +8,20 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class UserDao {
+public class RegisterDao {
     public int registerUser(MarioUser user) throws ClassNotFoundException {
         String INSERT_USERS_SQL = "INSERT INTO mariobrothers.users" +
-                " (username, password, role) VALUES" +
-                "(?,?,?);";
+                " (name, password, role) VALUES (?, ?, ?)";
 
         int result = 0;
 
         Class.forName("com.mysql.jdbc.Driver");
 
-        try (Connection connection = DriverManager
-                .getConnection(DbConfiguration.url, DbConfiguration.user, "74524Zaur%");
-
+        try (Connection connection = DriverManager.getConnection(DbConfiguration.url, DbConfiguration.user, DbConfiguration.password);
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
-            preparedStatement.setString(2, user.getUserName());
-            preparedStatement.setString(3, user.getPassword());
-            preparedStatement.setInt(4, 2);
-
+            preparedStatement.setString(1, user.getUserName());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setInt(3, 1);
             System.out.println(preparedStatement);
 
             result = preparedStatement.executeUpdate();
@@ -33,8 +29,5 @@ public class UserDao {
             e.printStackTrace();
         }
         return result;
-
     }
-
 }
-

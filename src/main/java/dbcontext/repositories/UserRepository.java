@@ -1,5 +1,6 @@
 package dbcontext.repositories;
 
+import dbcontext.DbConfiguration;
 import dbcontext.interfaces.IUserRepository;
 import dbcontext.models.MarioUser;
 
@@ -48,10 +49,7 @@ public class UserRepository implements IUserRepository {
             stmt.setString(2, password);
 
             rs = stmt.executeQuery();
-            if (rs == null){
-                return user;
-            }
-            while(rs.next()) {
+            if (rs.next()) {
                 int id = rs.getInt("id");
                 short role = rs.getShort("role");
                 user = new MarioUser(id, name, password, role);

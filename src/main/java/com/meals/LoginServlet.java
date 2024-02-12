@@ -39,13 +39,18 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("userId", user.getId());
                 session.setAttribute("userRole", user.getRole());
 
-                response.sendRedirect("meals");
+                if (user.getRole() == 1) {
+                    response.sendRedirect("meals");
+                } else if (user.getRole() == 2) {
+                    response.sendRedirect("AdminServlet");
+                }
             } else {
-                request.setAttribute("error","There is no such a user");
+                request.setAttribute("error", "Invalid username or password");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
 
+    }
 }

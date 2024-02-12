@@ -1,7 +1,7 @@
 package com.meals;
 
 import dbcontext.models.MarioUser;
-import models.dao.UserDao;
+import models.dao.RegisterDao;
 
 import java.io.*;
 
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "RegisterServlet", value = "/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
     private String message;
-    private UserDao userDao = new UserDao();
+    private RegisterDao userDao = new RegisterDao();
 
     public void init() {
         message = "Hello World!";
@@ -32,14 +32,12 @@ public class RegisterServlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String userName = request.getParameter("userName");
+        String userName = request.getParameter("name");
         String password = request.getParameter("password");
-        int role = request.getIntHeader("role");
 
         MarioUser user = new MarioUser();
         user.setUserName(userName);
         user.setPassword(password);
-        user.setRole(role);
 
         try {
             userDao.registerUser(user);

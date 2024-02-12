@@ -13,7 +13,7 @@
         <table style="with: 80%">
             <tr>
                 <td>User Name</td>
-                <td><input type="text" name="userName" /></td>
+                <td><input type="text" name="name" /></td>
             </tr>
             <tr>
                 <td>Password</td>
