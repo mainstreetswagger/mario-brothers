@@ -14,24 +14,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
-    <div class="m-2 d-flex align-items-center justify-content-center">
+<div class="m-2 d-flex align-items-center justify-content-center">
     <div class="container m-2">
-        <a href="login.jsp" class="btn btn-danger">Logout</a>
-        <div><h2>Mario Brothers</h2></div>
-        <div class="w-75 border border-dark rounded">
-            <div class="float-lg-end m-2">
-                <button class="btn btn-success" type="button" onclick="postMeals()">Order!</button>
         <div><h2><%=request.getAttribute("header").toString()%></h2></div>
         <div class="border border-dark rounded">
             <div class="d-flex justify-content-between">
                 <div class="m-2">
                     <a href="/my-orders">My Orders</a>
                 </div>
-                <div class="m-2">
-                    <button class="btn btn-success" type="button" onclick="postMeals()">Order!</button>
+                <div class="d-flex justify-content-between">
+                    <div class="m-2">
+                        <button class="btn btn-success" type="button" onclick="postMeals()">Order!</button>
+                    </div>
+                    <div class="m-2">
+                        <a href="login.jsp" class="btn btn-danger">Logout</a>
+                    </div>
                 </div>
             </div>
-                <table class="table">
+            <table class="table">
                 <thead>
                 <tr>
                     <th class="col-1">#</th>
